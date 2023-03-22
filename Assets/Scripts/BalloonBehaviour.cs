@@ -5,8 +5,8 @@ using UnityEngine;
 public class BalloonBehaviour : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
         RandomSpawn();
     }
