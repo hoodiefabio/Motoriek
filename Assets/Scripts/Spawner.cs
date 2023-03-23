@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] float spawnTime = 30f;
     [SerializeField] GameObject myPrefab;
     [SerializeField] Canvas canvas;
+    public int score = 0;
 
     private float timer;
     // Start is called before the first frame update
@@ -30,6 +31,5 @@ public class Spawner : MonoBehaviour
     void SpawnPrefab()
     {
         Instantiate(myPrefab, canvas.transform);
-        //myPrefab.transform.SetParent(this.transform);
     }
 }
