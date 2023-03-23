@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnWave()
     {
-        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,20), canvas.transform.position.z), Quaternion.identity, canvas.transform);
-        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,20), canvas.transform.position.z), Quaternion.identity, canvas.transform);
+        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,10), canvas.transform.position.z), Quaternion.identity, canvas.transform);
+        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,10), canvas.transform.position.z), Quaternion.identity, canvas.transform);
     }
 }
