@@ -31,6 +31,12 @@ public class BalloonBehaviour : MonoBehaviour
             buttonImage.color = Color.yellow;
         else if(layers == 1)
             buttonImage.color = Color.red;
+
+        if (transform.position.y < -6)
+        {
+            spawner.lives--;
+            Destroy(gameObject);
+        }
     }
     void RandomSpawn()
     {

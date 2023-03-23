@@ -8,8 +8,10 @@ public class Spawner : MonoBehaviour
     [SerializeField] float spawnTime = 30f;
     [SerializeField] GameObject myPrefab;
     [SerializeField] Text scoreText;
+    [SerializeField] Text liveText;
     [SerializeField] Canvas canvas;
     public int score = 0;
+    public int lives = 3;
 
     private float timer;
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class Spawner : MonoBehaviour
         }
 
         scoreText.text = "Score: " + score;
+        liveText.text = lives.ToString();
     }
 
     void SpawnWave()
