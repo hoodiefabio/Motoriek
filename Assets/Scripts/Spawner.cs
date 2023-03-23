@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] float spawnTime = 30f;
     [SerializeField] GameObject myPrefab;
+    [SerializeField] Text scoreText;
     [SerializeField] Canvas canvas;
     public int score = 0;
 
@@ -23,13 +25,16 @@ public class Spawner : MonoBehaviour
 
         if(timer <= 0)
         {
-            SpawnPrefab();
+            SpawnWave();
             timer = spawnTime;
         }
+
+        scoreText.text = "Score: " + score;
     }
 
-    void SpawnPrefab()
+    void SpawnWave()
     {
-        Instantiate(myPrefab, canvas.transform);
+        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,20), canvas.transform.position.z), Quaternion.identity, canvas.transform);
+        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,20), canvas.transform.position.z), Quaternion.identity, canvas.transform);
     }
 }

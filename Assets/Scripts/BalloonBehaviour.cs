@@ -34,7 +34,6 @@ public class BalloonBehaviour : MonoBehaviour
     }
     void RandomSpawn()
     {
-        this.transform.position = new Vector3(Random.Range(-6, 7), 6);
         int randomID = Random.Range(1, 20);
 
         if (randomID > 16)
