@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] float spawnTime = 30f;
     [SerializeField] GameObject myPrefab;
+    [SerializeField] GameObject winScreen;
     [SerializeField] Text scoreText;
     [SerializeField] Text liveText;
     [SerializeField] Canvas canvas;
@@ -18,6 +19,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         timer = spawnTime;
+        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,10 +27,15 @@ public class Spawner : MonoBehaviour
     {
         timer -= Time.deltaTime; 
 
-        if(timer <= 0)
+        if(timer <= 0 && lives > 0)
         {
             SpawnWave();
             timer = spawnTime;
+        }
+
+        if(lives == 0)
+        {
+            winScreen.SetActive(true);
         }
 
         scoreText.text = "Score: " + score;
