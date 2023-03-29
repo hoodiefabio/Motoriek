@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] float spawnTime = 30f;
+    [SerializeField] float spawnTime = 5f;
+    [SerializeField] public float moveSpeed = 1f;
     [SerializeField] GameObject myPrefab;
     [SerializeField] GameObject winScreen;
     [SerializeField] Text scoreText;
@@ -13,7 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] Canvas canvas;
     public int score = 0;
     public int lives = 3;
-
+    
     private float timer;
     // Start is called before the first frame update
     void Start()
@@ -46,5 +47,8 @@ public class Spawner : MonoBehaviour
     {
         Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,10), canvas.transform.position.z), Quaternion.identity, canvas.transform);
         Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,10), canvas.transform.position.z), Quaternion.identity, canvas.transform);
+        spawnTime -= (spawnTime / 60);
+        moveSpeed += (moveSpeed / 60);
+
     }
 }

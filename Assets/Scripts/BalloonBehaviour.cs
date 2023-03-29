@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class BalloonBehaviour : MonoBehaviour
 {
     [SerializeField] int layers = 1;
-    [SerializeField] float moveSpeed = 1f;
     private Image buttonImage;
     private Spawner spawner;
 
@@ -53,7 +52,7 @@ public class BalloonBehaviour : MonoBehaviour
 
     void FloatDown()
     {
-        transform.position -= new Vector3(0,moveSpeed * Time.deltaTime, 0);
+        transform.position -= new Vector3(0,spawner.moveSpeed * Time.deltaTime, 0);
     }
 
     public void PopBalloon()
