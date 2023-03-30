@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 5
+  moveSpeed: 1
   myPrefab: {fileID: 3128266292911995822, guid: 496bf742e7482c042ad33e31c97dae1f, type: 3}
   winScreen: {fileID: 2053996080}
   scoreText: {fileID: 1948582676}
@@ -1262,8 +1263,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 217a9737ead11264b926cba6ba0ebfd1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
