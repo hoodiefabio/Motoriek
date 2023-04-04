@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BalloonBehaviour : MonoBehaviour
 {
     [SerializeField] int layers = 1;
+    [SerializeField] Animator animator;
     private Image buttonImage;
     private Spawner spawner;
 
@@ -58,7 +59,15 @@ public class BalloonBehaviour : MonoBehaviour
     public void PopBalloon()
     {
         spawner.score += 1;
-        if(layers == 1)
+        StartCoroutine(PopAnimation());
+       
+    }
+
+    private IEnumerator PopAnimation()
+    {
+        animator.Play("PoppingAnimation");
+        yield return new WaitForSecondsRealtime(0.1f);
+        if (layers == 1)
         {
             Destroy(gameObject);
         }
