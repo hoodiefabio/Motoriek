@@ -39,14 +39,20 @@ public class Spawner : MonoBehaviour
             winScreen.SetActive(true);
         }
 
+        //Caps difficulty
+        if (moveSpeed > 2.5f)
+            moveSpeed = 2.5f;
+        if (spawnTime < 1.7f)
+            spawnTime = 1.7f;
+
         scoreText.text = "Score: " + score;
         liveText.text = lives.ToString();
     }
 
     void SpawnWave()
     {
-        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,10), canvas.transform.position.z), Quaternion.identity, canvas.transform);
-        Instantiate(myPrefab, new Vector3(Random.Range(-7, 7), Random.Range(7,10), canvas.transform.position.z), Quaternion.identity, canvas.transform);
+        Instantiate(myPrefab, new Vector3(Random.Range(-5.5f, 5.5f), Random.Range(8,11), canvas.transform.position.z), Quaternion.identity, canvas.transform);
+        Instantiate(myPrefab, new Vector3(Random.Range(-5.5f, 5.5f), Random.Range(8,11), canvas.transform.position.z), Quaternion.identity, canvas.transform);
         spawnTime -= (spawnTime / 60);
         moveSpeed += (moveSpeed / 60);
 
