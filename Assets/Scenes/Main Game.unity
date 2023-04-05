@@ -175,7 +175,7 @@ MonoBehaviour:
   liveText: {fileID: 1182347373}
   canvas: {fileID: 2080703760}
   score: 0
-  lives: 3
+  lives: 5
 --- !u!1 &84660102
 GameObject:
   m_ObjectHideFlags: 0
