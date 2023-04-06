@@ -34,8 +34,14 @@ public class Spawner : MonoBehaviour
             timer = spawnTime;
         }
 
-        if(lives == 0)
+       
+        if (lives == 0)
         {
+            if (score > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+
             winScreen.SetActive(true);
         }
 
