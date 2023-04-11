@@ -7,6 +7,7 @@ public class BalloonBehaviour : MonoBehaviour
 {
     [SerializeField] int layers = 1;
     [SerializeField] Animator animator;
+    [SerializeField] AudioSource popSound;
     private Image buttonImage;
     private Spawner spawner;
 
@@ -32,11 +33,14 @@ public class BalloonBehaviour : MonoBehaviour
         else if(layers == 1)
             buttonImage.color = Color.red;
 
-        if (transform.position.y < -6)
+        if (transform.position.y < -6 && spawner.lives > 0)
         {
             spawner.lives--;
             Destroy(gameObject);
         }
+
+        if(spawner.lives == 0)
+            Destroy(gameObject);
     }
     void RandomSpawn()
     {
@@ -66,9 +70,11 @@ public class BalloonBehaviour : MonoBehaviour
     private IEnumerator PopAnimation()
     {
         animator.Play("PoppingAnimation");
-        yield return new WaitForSecondsRealtime(0.1f);
+        popSound.PlayOneShot(popSound.clip);
+        yield return new WaitForSecondsRealtime(0.15f);
         if (layers == 1)
         {
+            yield return new WaitForSecondsRealtime(0.07f);
             Destroy(gameObject);
         }
         else
