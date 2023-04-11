@@ -10,11 +10,13 @@ public class BalloonBehaviour : MonoBehaviour
     [SerializeField] AudioSource popSound;
     private Image buttonImage;
     private Spawner spawner;
+    private AudioSource damageSound;
 
     private void Start()
     {
         buttonImage = GetComponent<Image>();
         spawner = FindObjectOfType<Spawner>();
+        damageSound = GameObject.FindGameObjectWithTag("Damage").GetComponent<AudioSource>();
     }
     void Awake()
     {
@@ -36,6 +38,7 @@ public class BalloonBehaviour : MonoBehaviour
         if (transform.position.y < -6 && spawner.lives > 0)
         {
             spawner.lives--;
+            damageSound.PlayOneShot(damageSound.clip);
             Destroy(gameObject);
         }
 

@@ -152,6 +152,7 @@ MonoBehaviour:
   layers: 1
   animator: {fileID: 350734238417306713}
   popSound: {fileID: 5082300312589803726}
+  damageSound: {fileID: 0}
 --- !u!95 &350734238417306713
 Animator:
   serializedVersion: 4
