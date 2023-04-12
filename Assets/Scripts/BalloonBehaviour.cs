@@ -77,7 +77,7 @@ public class BalloonBehaviour : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.15f);
         if (layers == 1)
         {
-            yield return new WaitForSecondsRealtime(0.07f);
+            yield return new WaitForSecondsRealtime(0.05f);
             Destroy(gameObject);
         }
         else
