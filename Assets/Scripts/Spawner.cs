@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] Canvas canvas;
     public int score = 0;
     public int lives = 3;
+    public bool gameOver;
     
     private float timer;
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class Spawner : MonoBehaviour
     {
         timer = spawnTime;
         winScreen.SetActive(false);
+        gameOver = false;
     }
 
     // Update is called once per frame
@@ -41,7 +43,7 @@ public class Spawner : MonoBehaviour
             {
                 PlayerPrefs.SetInt("HighScore", score);
             }
-
+            gameOver = true;
             winScreen.SetActive(true);
         }
 
