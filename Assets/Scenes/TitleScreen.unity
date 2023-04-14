@@ -978,7 +978,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 1200, y: 700}
+  m_SizeDelta: {x: 1200, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209122078
 MonoBehaviour:
@@ -1002,7 +1002,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1013,7 +1013,31 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Explanation of the game will go here
+  m_Text: 'Welkom bij Prikballon!
+
+
+    In dit spel zweven er ballonnen van de bovenkant
+    van het scherm naar beneden toe.
+
+    Om punten te verdienen moet u de ballonnen
+    prikken.
+
+    Als een ballon uit het scherm sweeft, dan verliest u een leven.
+
+    Het
+    spel is afgelopen wanneer u geen levens meer heeft.
+
+
+    Let op!
+
+    Sommige
+    ballonnen hebben meerdere lagen.
+
+    Dit wordt aangegeven doormiddel van de
+    kleur van de ballon.
+
+
+    Veel Succes!'
 --- !u!222 &1209122079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1576,7 +1600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Motoriek
+  m_Text: Prikballon
 --- !u!222 &2123923031
 CanvasRenderer:
   m_ObjectHideFlags: 0

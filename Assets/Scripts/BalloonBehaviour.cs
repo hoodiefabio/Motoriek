@@ -17,8 +17,9 @@ public class BalloonBehaviour : MonoBehaviour
         buttonImage = GetComponent<Image>();
         spawner = FindObjectOfType<Spawner>();
         damageSound = GameObject.FindGameObjectWithTag("Damage").GetComponent<AudioSource>();
+
     }
-    void Awake()
+   void Awake()
     {
         RandomSpawn();
     }
