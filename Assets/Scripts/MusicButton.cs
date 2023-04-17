@@ -29,13 +29,6 @@ public class MusicButton : MonoBehaviour
        else
             buttonImage.color = startColor;
        
-        if (spawner != null)
-        {
-            if (spawner.gameOver)
-            {
-                mixer.SetFloat("Volume", -80.0f);
-            }
-        }
     }
 
     public void ToggleMusic()
