@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] Spawner spawner;
     [SerializeField] Text winScore;
     [SerializeField] Text highScore;
+    [SerializeField] GameObject confetti;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class GameOver : MonoBehaviour
     {
         winScore.text = "Score: " + spawner.score;
         highScore.text = "Highscore: " + PlayerPrefs.GetInt("HighScore");
+        if (spawner.newHighscore)
+            confetti.SetActive(true);
     }
 
     public void Restart()

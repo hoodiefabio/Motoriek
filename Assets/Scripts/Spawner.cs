@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
     public int score = 0;
     public int lives = 3;
     public bool gameOver;
+    public bool newHighscore;
     
     private float timer;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Spawner : MonoBehaviour
         timer = spawnTime;
         winScreen.SetActive(false);
         gameOver = false;
+        newHighscore = false;
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class Spawner : MonoBehaviour
             if (score > PlayerPrefs.GetInt("HighScore", 0))
             {
                 PlayerPrefs.SetInt("HighScore", score);
+                newHighscore |= true;
             }
             gameOver = true;
             winScreen.SetActive(true);
