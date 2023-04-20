@@ -10,10 +10,11 @@ public class GameOver : MonoBehaviour
     [SerializeField] Text winScore;
     [SerializeField] Text highScore;
     [SerializeField] GameObject confetti;
+    [SerializeField] AudioSource bgm;
     // Start is called before the first frame update
     void Start()
     {
-       
+       bgm.mute = false;
     }
 
     // Update is called once per frame
@@ -21,6 +22,8 @@ public class GameOver : MonoBehaviour
     {
         winScore.text = "Score: " + spawner.score;
         highScore.text = "Highscore: " + PlayerPrefs.GetInt("HighScore");
+        if(spawner.gameOver)
+            bgm.mute = true;
         if (spawner.newHighscore)
             confetti.SetActive(true);
     }

@@ -1200,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2626959071541095522, guid: 922e082299194644aabc4d2b51d5d98f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2626959071541095522, guid: 922e082299194644aabc4d2b51d5d98f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1242,6 +1242,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d17f3688df1b32b479ba27cc73810f96, type: 2}
+    - target: {fileID: 2626959071541095524, guid: 922e082299194644aabc4d2b51d5d98f, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 922e082299194644aabc4d2b51d5d98f, type: 3}
 --- !u!224 &1664440320 stripped
@@ -1736,6 +1740,7 @@ MonoBehaviour:
   winScore: {fileID: 84660104}
   highScore: {fileID: 1564062189}
   confetti: {fileID: 1664440321}
+  bgm: {fileID: 327280532}
 --- !u!1 &2080703756
 GameObject:
   m_ObjectHideFlags: 0
