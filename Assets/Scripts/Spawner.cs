@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
         if (spawnTime < 1.7f)
             spawnTime = 1.7f;
 
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
         liveText.text = lives.ToString();
     }
 
